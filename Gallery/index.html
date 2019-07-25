@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cайт для супер успешных людей!</title>
+	<link rel="stylesheet" href="main.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+<body>
+	<div class="box">
+		<div class="item" style="background-image: url(img/c1.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c2.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c3.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c4.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c5.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c6.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c7.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c8.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c9.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c1.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c2.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c3.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c4.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c5.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c6.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c7.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c8.jpg);"><span class="inner">Мои машины</span></div>
+		<div class="item" style="background-image: url(img/c9.jpg);"><span class="inner">Мои машины</span></div>
+	</div>
+	<div class="overlay"><img src="" alt="" class="modal"></div>
+
+	<script>
+		var items = document.querySelectorAll('.item');
+		var overlay = document.querySelector('.overlay');
+		var modal = document.querySelector('.modal');
+
+		for (let item of items) {
+			item.onclick = function() {
+				overlay.style.display = 'flex'; 
+				modal.setAttribute('src', item.style.backgroundImage.slice(5,-2));
+				setTimeout(function() {
+					overlay.classList.add('opacity');
+					modal.classList.add('open-modal');
+				}, 10); 
+			}
+		}
+
+		overlay.onclick = function() {
+			setTimeout (function() {
+				overlay.style.display = 'none';
+				modal.classList.remove('close-modal');
+				overlay.classList.remove('open-modal');
+			}, 220);
+
+			overlay.classList.remove('opacity');
+			modal.classList.add('close-modal')
+}
+
+		
+		
+	</script> 
+
+
+</body>
+</html>
